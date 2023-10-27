@@ -1,21 +1,31 @@
 #include <iostream>
-
 using namespace std;
-char func(int j){
-    if(j>=32 && j<=126){
-        return char(j);
-    }else{
-        return ('W');
+void showprime(int j, int s)
+{
+    bool flag;
+    for(int i=j+1; i<=s;i++)
+    {
+        flag=false;
+        for(int j=2;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                flag=true;
+                break;
+                
+            }
+        }
+        if(flag==false && i>1)
+            cout<<i<<" ";
     }
 }
-int main(){
-    int x;
-    cin>>x;
-    char a=func(x);
-    if(a=='W'){
-        cout<<"Wrong";
-    }else{
-        cout<<a;
-    }
-     return 0;
+        
+
+int main () {
+    int j,s;
+    cin>>j>>s;
+    showprime(j,s);
+    
+    
+    return 0;
 }
